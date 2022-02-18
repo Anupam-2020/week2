@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment"
+    >
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.industrialstructurecasestudy.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_viewBoardsFragment"
+            app:destination="@id/viewBoardsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createOrganizationFragment2"
+            app:destination="@id/createOrganizationFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_createBoardFragment"
+            app:destination="@id/createBoardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createListFragment"
+            app:destination="@id/createListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createOrganizationFragment2"
+        android:name="com.example.industrialstructurecasestudy.ui.CreateOrganizationFragment"
+        android:label="CreateOrganizationFragment" />
+    <fragment
+        android:id="@+id/createBoardFragment"
+        android:name="com.example.industrialstructurecasestudy.ui.board.CreateBoardFragment"
+        android:label="fragment_create_board"
+        tools:layout="@layout/fragment_create_board" />
+    <fragment
+        android:id="@+id/viewBoardsFragment"
+        android:name="com.example.industrialstructurecasestudy.ui.board.ViewBoardsFragment"
+        android:label="fragment_view_boards"
+        tools:layout="@layout/fragment_view_boards">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewBoardsFragment_to_viewListsAndCardsFragment"
+            app:destination="@id/viewListsAndCardsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createListFragment"
+        android:name="com.example.industrialstructurecasestudy.ui.listsAndCards.CreateListFragment"
+        android:label="fragment_create_list"
+        tools:layout="@layout/fragment_create_list" />
+    <fragment
+        android:id="@+id/viewListsAndCardsFragment"
+        android:name="com.example.industrialstructurecasestudy.ui.listsAndCards.ViewListsAndCardsFragment"
+        android:label="fragment_view_lists_and_cards"
+        tools:layout="@layout/fragment_view_lists_and_cards" />
+</navigation>

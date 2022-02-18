@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.industrialstructurecasestudy.ui.listsAndCards.CreateListViewModel"/>
+        <variable
+            name="vm"
+            type="com.example.industrialstructurecasestudy.ui.listsAndCards.CreateListViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.listsAndCards.CreateListFragment">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="366dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="48dp"
+            android:hint="@string/hint_workspace_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onTextChanged="@{ (str, st, ed, cnt) -> vm.onListNameChanged(String.valueOf(str))}"
+            />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="360dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="64dp"
+            android:text="Create"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2"
+            android:onClick="@{ () -> vm.onCreateListClicked() }"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
